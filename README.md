@@ -43,48 +43,55 @@ devops-buddy/
 ```
 
 #Local Setup
-```bash
+```
 git clone https://github.com/ammukaleem/devops-buddy.git
 cd devops-buddy
+```
 
 python3 should be pre installed
-```bash
+```
 pip install -r requirements.txt 
 python3 app.py
+```
 
 Access on browser
-```bash
-http://localhost:5000 or http://your-ip:5000
-
+```
+http://localhost:5000 or http://your-node-ip:5000
+```
 #Docker Setup
-docker pre installed
+docker should be pre installed
 Run
-```bash
+```
 docker build -t devops-buddy -t .
 docker run -p5000:5000 devops-buddy:letest
+```
 Access on browser 
-```bash
+```
 http://localhost:5000 or http://your-ip:5000
-
+```
 #☸ Kubernetes Deployment (kubeadm Cluster)
 step:1
-```bash
+```
 docker tag devops-buddy <dockerhub-username>/devops-buddy:latest
+```
 step:2
-```bash
+```
 docker push <dockerhub-username>/devops-buddy:latest
+```
 step:3
 update deployment.yaml
 image: <dockerhub-username>/devops-buddy:latest
 step:4 
 Apply deployment and service files
-```bash
+```
 kubectl create -f .
+```
 step:5 
 verify deployment and service
-```bash
+```
 kubectl get all
-# finally Access webpage on http://your-ip:30777
+```
+# finally Access webpage on http://your-node-ip:30777
 
 
 
