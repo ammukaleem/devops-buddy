@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-buddy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-buddy
+  template:
+    metadata:
+      labels:
+        app: devops-buddy
+    spec:
+      containers:
+      - name: devops-buddy
+        image: dockaleem/devops-buddy:latest
+        ports:
+        - containerPort: 5000
